@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; background: transparent; color: white; }
+  .overlay { width: 800px; height: 200px; background: rgba(0,0,0,0.4); padding:12px; border-radius:12px; display:flex; gap:12px; align-items:center; }
+  .left { flex:1; }
+  .right { width:220px; text-align:right; }
+  .room { font-size:20px; font-weight:700; }
+  .cta { font-size:16px; background: #ff0066; padding:6px 10px; border-radius:8px; display:inline-block; }
+  .numbers { margin-top:8px; }
+  .bubble { display:inline-block; padding:6px 8px; margin-right:6px; background:rgba(255,255,255,0.12); border-radius:6px; }
+</style>
+</head>
+<body>
+<div class="overlay">
+  <div class="left">
+    <div class="room">Bingo Live — Sala: <span id="room">AB1234</span></div>
+    <div class="numbers"><span class="bubble">B-12</span><span class="bubble">I-28</span><span class="bubble">N-40</span></div>
+  </div>
+  <div class="right">
+    <div class="cta">Escribe: QUIERO CARTÓN</div>
+    <div style="font-size:12px; margin-top:6px;">Sígueme para más</div>
+  </div>
+</div>
+<script>
+  // Para usar dinámicamente, puedes actualizar #room y las #numbers desde OBS Browser Source URL con query params.
+  const params = new URLSearchParams(window.location.search);
+  const r = params.get('room'); if(r) document.getElementById('room').textContent = r;
+</script>
+</body>
+</html>
