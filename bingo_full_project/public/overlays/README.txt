@@ -1,1 +1,0 @@
-Usa overlay.html en OBS como Browser Source. Ajusta tamaño y pasa query ?room=CODIGO para mostrar sala.
